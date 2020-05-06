@@ -1,24 +1,27 @@
 package com.triangle;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
-
 import static java.lang.Integer.parseInt;
+import static java.lang.Math.sqrt;
 
 public class Data {
-    String triangleInfo;
-    String[] triangleArr;
     ArrayList<Triangle> triangles = new ArrayList<>();
-    String answer;
     int sideA, sideB, sideC;
+    float area;
     String triangleName;
-    Triangle t = new Triangle(triangleName, sideA, sideB, sideC);
-
+    Triangle t = new Triangle(triangleName, sideA, sideB, sideC, area);
 
     public void inputData() {
+        String triangleInfo;
+        String answer;
+        String[] triangleArr;
+        float perimetr;
+
         Scanner s = new Scanner(System.in);
         do {
-            System.out.println("Please enter name and length for each side of triangle : ");
+            System.out.print("Please enter name and length for each side of triangle : ");
             triangleInfo = s.nextLine();
             triangleArr = triangleInfo.split(", ");
 
@@ -27,9 +30,14 @@ public class Data {
             sideB = parseInt(triangleArr[2]);
             sideC = parseInt(triangleArr[3]);
 
-            triangles.add(new Triangle (triangleName, sideA, sideB, sideC));
+            perimetr = (sideA + sideB + sideC) / 2;
+            area = (float) sqrt((perimetr * (perimetr - sideA) * (perimetr - sideB) * (perimetr - sideC)));
+
+            triangles.add(new Triangle(triangleName, sideA, sideB, sideC, area));
+            Collections.sort(triangles, Collections.reverseOrder());
             System.out.println("Would you like to continue (Y/N): ");
             answer = s.nextLine();
+
         }
         while ((answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("yes")));
     }
