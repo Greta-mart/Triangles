@@ -1,8 +1,9 @@
 package com.triangle;
 
 import static java.lang.Math.sqrt;
+import java.lang.Float;
 
-public class Triangle {
+public class Triangle implements Comparable< Triangle >{
     private String triangleName;
     private int sideA;
     private int sideB;
@@ -38,4 +39,21 @@ public class Triangle {
     public void setArea(float area) {
         this.area = area;
     }
+    public Float getArea() {
+        return area;
+    }
+
+    @Override
+    public String toString() {
+        return "Triangle{" +
+                "Triangle Name='" + triangleName + '\'' +
+                ", Area=" + area +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Triangle t) {
+        return this.getArea().compareTo(t.area);
+    }
+
 }

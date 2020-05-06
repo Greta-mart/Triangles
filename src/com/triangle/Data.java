@@ -37,20 +37,11 @@ public class Data {
 
             Collections.sort(triangles, Collections.reverseOrder());
 
-            System.out.println("Would you like to continue (Y/N): ");
+            System.out.print("Would you like to continue (Y/N): ");
             answer = s.nextLine();
 
         }
         while ((answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("yes")));
     }
 
-    @Override
-    public String toString() {
-        return "Data{" +
-                "triangles=" + triangles +
-                ", area=" + area +
-                ", triangleName='" + triangleName + '\'' +
-                ", t=" + t +
-                '}';
-    }
 }
