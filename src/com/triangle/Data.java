@@ -11,7 +11,7 @@ public class Data {
     int sideA, sideB, sideC;
     float area;
     String triangleName;
-    Triangle t = new Triangle(triangleName, sideA, sideB, sideC, area);
+    Triangle t = new Triangle(triangleName, sideA, sideB, sideC);
 
     public void inputData() {
         String triangleInfo;
@@ -33,12 +33,24 @@ public class Data {
             perimetr = (sideA + sideB + sideC) / 2;
             area = (float) sqrt((perimetr * (perimetr - sideA) * (perimetr - sideB) * (perimetr - sideC)));
 
-            triangles.add(new Triangle(triangleName, sideA, sideB, sideC, area));
+            triangles.add(new Triangle(triangleName, sideA, sideB, sideC));
+
             Collections.sort(triangles, Collections.reverseOrder());
+
             System.out.println("Would you like to continue (Y/N): ");
             answer = s.nextLine();
 
         }
         while ((answer.equalsIgnoreCase("y") || answer.equalsIgnoreCase("yes")));
+    }
+
+    @Override
+    public String toString() {
+        return "Data{" +
+                "triangles=" + triangles +
+                ", area=" + area +
+                ", triangleName='" + triangleName + '\'' +
+                ", t=" + t +
+                '}';
     }
 }

@@ -9,22 +9,14 @@ public class Triangle {
     private int sideC;
     private float area;
 
-    public void setArea(float area) {
-        this.area = area;
-    }
-
-    public Triangle(String triangleName, int sideA, int sideB, int sideC, float area) {
+    public Triangle(String triangleName, int sideA, int sideB, int sideC) {
+        float perimetr;
         this.setTriangleName(triangleName);
         this.setSideA(sideA);
         this.setSideB(sideB);
         this.setSideC(sideC);
-        this.setArea(area);
-    }
-
-    public float area() {
-        float perimetr;
         perimetr = (sideA + sideB + sideC) / 2;
-        return (float) sqrt((perimetr * (perimetr - sideA) * (perimetr - sideB) * (perimetr - sideC)));
+        this.area = (float) sqrt((perimetr * (perimetr - sideA) * (perimetr - sideB) * (perimetr - sideC)));
     }
 
     public void setTriangleName(String triangleName) {
@@ -41,5 +33,9 @@ public class Triangle {
 
     public void setSideC(int sideC) {
         this.sideC = sideC;
+    }
+
+    public void setArea(float area) {
+        this.area = area;
     }
 }

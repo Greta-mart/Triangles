@@ -5,6 +5,6 @@ public class Main {
 
         Data d = new Data();
         d.inputData();
-        Triangle t = new Triangle(d.triangleName, d.sideA, d.sideB, d.sideC, d.area);
+        Triangle t = new Triangle(d.triangleName, d.sideA, d.sideB, d.sideC);
     }
 }
