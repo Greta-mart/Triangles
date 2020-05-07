@@ -6,8 +6,10 @@ public class Main {
     public static void main(String[] args) {
         Data d = new Data();
         d.inputData();
+
         if (!d.triangles.isEmpty()){
-            System.out.print(d.triangles.toString().replaceAll("^\\[|\\]$ ,", ""));
+            System.out.println("============= Triangles list: =============== ");
+            System.out.print(d.triangles.toString());
         }
     }
 }

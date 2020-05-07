@@ -47,7 +47,7 @@ public class Triangle implements Comparable< Triangle >{
     @Override
     public String toString() {
         return  "[Triangle Name=" + triangleName + "]" +
-                ", Area=" + area + " cm\n";
+                ", Area=" + area + " cm";
     }
 
     @Override

@@ -12,7 +12,6 @@ public class Data {
         int sideA = 0, sideB = 0, sideC = 0;
         String triangleName ="";
         String answer="";
-        new Triangle(triangleName, sideA, sideB, sideC);
 
         Scanner s = new Scanner(System.in);
         do {
@@ -26,9 +25,12 @@ public class Data {
                 sideA = parseInt(triangleArr[1]);
                 sideB = parseInt(triangleArr[2]);
                 sideC = parseInt(triangleArr[3]);
-
-                triangles.add(new Triangle(triangleName, sideA, sideB, sideC));
-
+                if (sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA) {
+                    triangles.add(new Triangle(triangleName, sideA, sideB, sideC));
+                }
+                else{
+                    System.out.println("Triangle is not exist");
+                }
                 Collections.sort(triangles, Collections.reverseOrder());
 
                 System.out.print("Would you like to continue (Y/N): ");
