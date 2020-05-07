@@ -9,7 +9,9 @@ public class Main {
 
         if (!d.triangles.isEmpty()){
             System.out.println("============= Triangles list: =============== ");
-            System.out.print(d.triangles.toString());
+            for (int i = 0; i < d.triangles.size(); i++) {
+                System.out.println(d.triangles.get(i).toString());
+            }
         }
     }
 }
