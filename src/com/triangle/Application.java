@@ -5,10 +5,10 @@ import java.util.Collections;
 import java.util.Scanner;
 import static java.lang.Integer.parseInt;
 
-public class Data {
+public class Application {
     ArrayList<Triangle> triangles = new ArrayList<>();
 
-    public void inputData() {
+    public void data() {
         int sideA = 0, sideB = 0, sideC = 0;
         String triangleName ="";
         String answer="";
@@ -25,12 +25,14 @@ public class Data {
                 sideA = parseInt(triangleArr[1]);
                 sideB = parseInt(triangleArr[2]);
                 sideC = parseInt(triangleArr[3]);
+
                 if (sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA) {
                     triangles.add(new Triangle(triangleName, sideA, sideB, sideC));
                 }
                 else{
                     System.out.println("Triangle is not exist");
                 }
+
                 Collections.sort(triangles, Collections.reverseOrder());
 
                 System.out.print("Would you like to continue (Y/N): ");
